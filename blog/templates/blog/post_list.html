@@ -10,21 +10,20 @@
     <header>
       <h1><a href="/">Django Girls Blog</a></h1>
     </header>
-    <article>
+    <!-- <article>
       <time>Published: 21.04.22, 11:53</time>
       <h2><a href="">My first post</a></h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
         commodi natus nobis!
       </p>
-    </article>
+    </article> -->
+    {% for post in posts %}
     <article>
-      <time>Published: 21.04.22, 11:54</time>
-      <h2><a href="">My second post</a></h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid quam
-        possimus ea deserunt repellat voluptates sit facilis fuga. Earum, quam.
-      </p>
+      <time>published: {{ post.published_date }}</time>
+      <h2><a href="">{{ post.title }}</a></h2>
+      <p>{{ post.text|linebreaksbr }}</p>
     </article>
+    {% endfor %}
   </body>
 </html>
